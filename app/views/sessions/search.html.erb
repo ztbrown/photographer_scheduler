@@ -1,0 +1,6 @@
+<h2>Results</h2>
+<ul>
+  <% @sessions.each do |session| %>
+  <li><%= session[:photographer_id] %></li>
+  <% end %>
+</ul>
