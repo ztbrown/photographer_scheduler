@@ -17,7 +17,7 @@ module MemoryRepository
 
     def find_all_by_date(date)
       @records.select do |record|
-        record.wedding_date.to_s == date
+        record.wedding_date == date
       end
     end
 
