@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'app/repositories/memory_repository/session'
-require 'spec/shared_examples/repositories/session_examples'
+require_relative '../../../app/repositories/memory_repository/session'
+#require 'spec/shared_examples/repositories/session_examples'
 
 module MemoryRepository
   describe 'In-Memory Session' do

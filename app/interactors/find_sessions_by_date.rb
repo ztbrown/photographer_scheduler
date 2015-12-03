@@ -4,7 +4,7 @@ class FindSessionsByDate
   attr_reader :session, :wedding_date
 
   def initialize(wedding_date)
-    @wedding_date = wedding_date
+    @wedding_date = Date.parse(wedding_date)
   end
 
   def execute

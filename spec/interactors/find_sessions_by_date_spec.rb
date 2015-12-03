@@ -10,7 +10,7 @@ RSpec.describe FindSessionsByDate, "#execute" do
       }
     end
     it "should find all sessions on the given date" do
-      results = FindSessionsByDate.new(Date.today + 1).execute()
+      results = FindSessionsByDate.new((Date.today + 1).to_s).execute()
       expect(results.length).to be(3)
     end
   end
