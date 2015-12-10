@@ -1,7 +1,7 @@
-require_relative '../../../app/repositories/memory_repository/session'
+require_relative '../../../app/repositories/memory_repository/contract'
 
 module MemoryRepository
-  class SessionRepository
+  class ContractRepository
     def initialize
       @records = []
       @id = 1
@@ -24,7 +24,7 @@ module MemoryRepository
     private
 
     def model_class
-      MemoryRepository::Session
+      MemoryRepository::Contract
     end
   end
 end

@@ -1,5 +1,5 @@
 module ActiveRecordRepository
-  class SessionRepository
+  class ContractRepository
 
     def create(attributes = {})
       object = model_class.new(attributes)
@@ -14,7 +14,7 @@ module ActiveRecordRepository
     private
 
     def model_class
-      ::Session
+      ::Contract
     end
   end
 end

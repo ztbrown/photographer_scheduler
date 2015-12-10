@@ -2,14 +2,13 @@ When(/^I fill in "(.*?)" with "(.*?)"$/) do |arg1, arg2|
   fill_in arg1, with: arg2
 end
 
-When(/^I press "(.*?)"$/) do |arg1|
-  click_button arg1
+When(/^I press "(.*?)"$/) do |arg|
+  click_button arg
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  expect(page).to have_content(arg1)
+Then(/^I should see "(.*?)"$/) do |arg|
+  expect(page).to have_content(arg)
 end
-
 
 Given /^I am not authenticated$/ do
   current_driver = Capybara.current_driver
