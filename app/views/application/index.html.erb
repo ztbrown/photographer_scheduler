@@ -1,0 +1,5 @@
+<%= form_tag(search_contracts_path, method: "get") do %>
+    <%= label_tag(:contract, "Wedding Date:") %>
+    <%= date_field(:contract, :date) %>
+    <%= submit_tag("Search", id: 'submit') %>
+<% end %>

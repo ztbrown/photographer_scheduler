@@ -1,0 +1,7 @@
+<%= form_tag(contracts_path, method: "post") do %>
+    <%= label_tag(:wedding_date, "Date:") %>
+    <%= text_field_tag(:wedding_date) %>
+    <%= label_tag(:rate, "Rate:") %>
+    <%= text_field_tag(:rate) %>
+    <%= submit_tag("Create") %>
+<% end %>

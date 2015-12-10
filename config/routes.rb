@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :customers
   devise_for :photographers
 
-  resources :sessions, :path => '/' do
+  root to: 'application#index'
+
+  resources :contracts do
     collection do
       get 'search'
     end

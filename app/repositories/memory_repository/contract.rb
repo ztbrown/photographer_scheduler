@@ -1,5 +1,5 @@
 module MemoryRepository
-  class Session
+  class Contract
     attr_accessor :id, :rate, :photographer_id, :customer_id, :wedding_date
 
     def initialize(args)
