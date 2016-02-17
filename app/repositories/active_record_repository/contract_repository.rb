@@ -2,9 +2,7 @@ module ActiveRecordRepository
   class ContractRepository
 
     def create(attributes = {})
-      object = model_class.new(attributes)
-      object.save!
-      object
+      model_class.new(attributes).tap {|object| object.save!}
     end
 
     def find_all_by_date(date)
