@@ -8,11 +8,11 @@ module MemoryRepository
     end
 
     def create(attributes = {})
-      object = model_class.new(attributes)
-      object.id = @id
-      @records.push(object)
-      @id += 1
-      object
+      model_class.new(attributes).tap{ |object|
+        object.id = @id
+        @records.push(object)
+        @id += 1
+      }
     end
 
     def find_all_by_date(date)

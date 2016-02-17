@@ -1,13 +1,15 @@
-require_relative '../../../app/repositories/active_record_repository/contract_repository'
-require_relative '../../shared_examples/repositories/session_examples'
+require File.dirname(__FILE__) +  '/../../../app/repositories/active_record_repository/contract_repository'
+require File.dirname(__FILE__) +  '/../../shared_examples/repositories/session_examples'
 
-module ActiveRecordRepository
+require 'spec_helper'
+require 'rails_helper'
+
   describe 'ActiveRecord Contract' do
-    before(:all) do
-      Repository.register(:contract, ActiveRecordRepository::SessionRepository.new)
+    before(:each) do
+      Repository.register(:contract, ActiveRecordRepository::ContractRepository.new)
     end
 
     it_behaves_like "contract model"
 
   end
-end
+

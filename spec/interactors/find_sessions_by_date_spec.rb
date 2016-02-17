@@ -1,8 +1,9 @@
-require_relative '../../app/interactors/find_contracts_by_date'
-require_relative '../../app/repositories/repository'
+require File.dirname(__FILE__) +  '/../../app/interactors/find_contracts_by_date'
+require File.dirname(__FILE__) +  '/../../app/repositories/repository'
+require File.dirname(__FILE__) +  '/../../app/repositories/memory_repository/contract_repository'
 
-RSpec.describe FindContractsByDate, "#execute" do
-  before(:all) do
+describe FindContractsByDate, "#execute" do
+  before(:each) do
     Repository.register(:contract, MemoryRepository::ContractRepository.new)
   end
   context "given a valid date in the future" do
