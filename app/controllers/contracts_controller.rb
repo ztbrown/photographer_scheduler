@@ -1,7 +1,9 @@
-class ContractsController < ApplicationController
+require_relative '../../app/facades/session_contract'
 
+class ContractsController < ApplicationController
+  
   def create
-    contract = CreateContract.new({date: params[:wedding_date], rate: params[:rate], photographer_id: current_photographer.id}).execute()
+    contract = SessionContract.create(params)
     flash[:message] = 'New session added successfully.'
     redirect_to action: 'show', id: contract.id
   end
@@ -11,12 +13,6 @@ class ContractsController < ApplicationController
   end
 
   def search
-    @contracts = FindContractsByDate.new(wedding_date_params[:date]).execute()
-  end
-
-  private
-
-  def wedding_date_params
-    params.require(:contract).permit(:date)
+    @contracts = SessionContract.find_by_date(params[:contract][:date])
   end
 end
