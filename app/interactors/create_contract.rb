@@ -1,4 +1,4 @@
-require_relative "../entities/contract_entity"
+require_relative '../entities/contract_entity'
 
 class CreateContract
   attr_reader :contract
