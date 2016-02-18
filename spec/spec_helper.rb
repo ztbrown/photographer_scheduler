@@ -28,28 +28,12 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  RSpec.configure do |config|
+  # Configure FactoryGirl
 
-    # Configure database cleaner
+  config.include FactoryGirl::Syntax::Methods
 
-    config.before(:suite) do
-      DatabaseCleaner.strategy = :transaction
-      DatabaseCleaner.clean_with(:truncation)
-    end
-
-    config.around(:each) do |example|
-      DatabaseCleaner.cleaning do
-        example.run
-      end
-    end
-
-    # Configure FactoryGirl
-
-    config.include FactoryGirl::Syntax::Methods
-
-    config.before(:suite) do
-      FactoryGirl.find_definitions
-    end
+  config.before(:suite) do
+    FactoryGirl.find_definitions
   end
 
 end

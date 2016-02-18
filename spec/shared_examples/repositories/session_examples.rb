@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 shared_examples "contract model" do
 
   context 'interface' do
@@ -29,14 +27,18 @@ shared_examples "contract model" do
 
     subject { Repository.for(:contract) }
 
-    before { FactoryGirl.create_list(:contract, 3) }
+    before { 3.times{|x| subject.create({rate: 100, photographer_id: 1, wedding_date: Date.today + 1})} }
 
     it 'should find all contracts by date' do
-      subject.find_all_by_date(Date.tomorrow).each.with_index {|contract, index|
+      subject.find_all_by_date(Date.today + 1).each.with_index {|contract, index|
         expect(contract.photographer_id).to eq(1)
-        expect(contract.wedding_date).to eq(Date.tomorrow)
+        expect(contract.wedding_date).to eq(Date.today + 1)
         expect(contract.rate).to eq(100)
       }
+    end
+
+    it 'should return an array' do
+      expect(subject.find_all_by_date(Date.today + 1).class).to eq(Array)
     end
   end
 

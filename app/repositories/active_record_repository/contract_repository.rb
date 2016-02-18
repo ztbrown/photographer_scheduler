@@ -6,7 +6,7 @@ module ActiveRecordRepository
     end
 
     def find_all_by_date(date)
-      model_class.where(wedding_date: date)
+      model_class.where(wedding_date: date).to_a
     end
 
     private

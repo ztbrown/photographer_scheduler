@@ -1,11 +1,10 @@
 require_relative '../../app/facades/session_contract'
 
 class ContractsController < ApplicationController
-  
+
   def create
-    contract = SessionContract.create(params)
     flash[:message] = 'New session added successfully.'
-    redirect_to action: 'show', id: contract.id
+    redirect_to action: 'show', id: SessionContract.create(params).id
   end
 
   def show
