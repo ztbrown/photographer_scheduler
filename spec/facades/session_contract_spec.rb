@@ -2,7 +2,7 @@ require_relative '../../app/facades/session_contract'
 require_relative '../../app/interactors/create_contract'
 require_relative  '../../app/repositories/repository'
 require_relative  '../../app/repositories/memory_repository/contract_repository'
-require 'spec_helper'
+require 'Date'
 
 describe SessionContract do
 

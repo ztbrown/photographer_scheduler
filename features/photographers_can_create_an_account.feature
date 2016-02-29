@@ -1,5 +1,7 @@
 Feature: A Photographer will register a new account
 
+    # As a Photographer, I want to register a new account so that I can begin posting my open dates
+
     Scenario Outline: Creating a new account
         Given I am not authenticated
         When I go to register a new Photographer account

@@ -1,5 +1,8 @@
 Feature: A Photographer will create a new session
 
+  # As a Photographer, I want to be able to login to my account and create a new session so that I can begin to
+  # schedule my empty dates and make money.
+
   Scenario Outline: Creating a new session
 
     Given I am not authenticated

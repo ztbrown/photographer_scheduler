@@ -1,5 +1,7 @@
 Feature: A Customer will register a new account
 
+  # As a Customer, I want to register for a new account so that I can schedule a Photographer
+
   Scenario Outline: Creating a new account
     Given I am not authenticated
     When I go to register a new Customer account
