@@ -12,7 +12,7 @@ module Repo
 
   describe ContractMethods do
     let(:repo) { ContractRepo.new }
-    describe '#new contract' do
+    describe '#new_contract' do
       context 'without attributes' do
         it { expect(repo.new_contract.new_record?).to be(true) }
       end
@@ -25,7 +25,7 @@ module Repo
       end
     end
 
-    describe '#save contract' do
+    describe '#save_contract' do
       context 'without attributes' do
         it 'will return false' do
           expect(repo.save_contract(repo.new_contract)).to be(false)
@@ -45,6 +45,36 @@ module Repo
           repo.save_contract(contract)
           expect(contract.persisted?).to be(true)
         end
+      end
+    end
+
+    describe '#find_contracts_by_wedding_date' do
+      context 'with a valid date and one match in the db' do
+        before(:each) do
+          @contract = repo.new_contract(CONTRACT_PARAMS)
+          repo.save_contract(@contract)
+        end
+        it { expect(repo.find_contracts_by_wedding_date(Date.today)).to eq([@contract]) }
+      end
+
+      context 'with a valid date and multiple matches in the db' do
+        before(:each) do
+          @contract = repo.new_contract(CONTRACT_PARAMS)
+          @contract1 = repo.new_contract(CONTRACT_PARAMS)
+          @contract2 = repo.new_contract(CONTRACT_PARAMS)
+          repo.save_contract(@contract)
+          repo.save_contract(@contract1)
+          repo.save_contract(@contract2)
+        end
+        it {expect(repo.find_contracts_by_wedding_date(Date.today)).to eq([@contract, @contract1, @contract2])}
+      end
+
+      context 'with an invalid date' do
+        before(:each) do
+          @contract = repo.new_contract(CONTRACT_PARAMS)
+          repo.save_contract(@contract)
+        end
+        it {expect(repo.find_contracts_by_wedding_date(nil)).to eq([])}
       end
     end
 

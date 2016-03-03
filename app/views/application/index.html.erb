@@ -1,5 +1,4 @@
-<%= form_tag(search_contracts_path, method: "get") do %>
-    <%= label_tag(:contract, "Wedding Date:") %>
-    <%= date_field(:contract, :date) %>
-    <%= submit_tag("Search", id: 'submit') %>
+<%= form_tag(search_contracts_path, :method => "get", id: "search-form") do %>
+    <%= date_field_tag :wedding_date, params[:wedding_date], placeholder: "Wedding Date" %>
+    <%= submit_tag "Search", id: 'submit' %>
 <% end %>
