@@ -1,7 +1,7 @@
-require_relative '../../app/facades/session_contract'
-require_relative '../../app/interactors/create_contract'
-require_relative  '../../app/repositories/repository'
-require_relative  '../../app/repositories/memory_repository/contract_repository'
+require './app/facades/session_contract'
+require './app/interactors/create_contract'
+require './app/repositories/repository'
+require './app/repositories/memory_repository/contract_repository'
 
 describe SessionContract do
 

@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../../app/entities/contract_entity'
+require './app/entities/contract_entity'
 
 describe ContractEntity do
   subject {ContractEntity.new({})}

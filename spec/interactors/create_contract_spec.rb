@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) +  '/../../app/interactors/create_contract'
-require File.dirname(__FILE__) +  '/../../app/repositories/repository'
-require File.dirname(__FILE__) +  '/../../app/repositories/memory_repository/contract_repository'
+require './app/interactors/create_contract'
+require './app/repositories/repository'
+require './app/repositories/memory_repository/contract_repository'
 
 describe CreateContract, "#create" do
   before(:each) do

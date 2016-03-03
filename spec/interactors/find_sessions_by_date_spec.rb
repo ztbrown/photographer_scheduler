@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) +  '/../../app/interactors/find_contracts_by_date'
-require File.dirname(__FILE__) +  '/../../app/repositories/repository'
-require File.dirname(__FILE__) +  '/../../app/repositories/memory_repository/contract_repository'
+require './app/interactors/find_contracts_by_date'
+require './app/repositories/repository'
+require './app/repositories/memory_repository/contract_repository'
 
 describe FindContractsByDate, "#execute" do
   before(:each) do

@@ -1,5 +1,5 @@
 Given (/^There is an open session for the date I am searching$/) do
-  Repository.for(:contract).create({wedding_date: Date.today + 1, photographer_id: 1})
+  Repository.for(:contract).create({wedding_date: Date.today + 1, photographer_id: 1, rate: 100})
 end
 
 When(/^I go to the homepage and search for open sessions on a future date$/) do
