@@ -4,7 +4,7 @@ end
 
 When(/^I go to the homepage and search for open sessions on a future date$/) do
   visit path
-  fill_in 'contract[date]', with: Date.tomorrow.to_s
+  fill_in 'wedding_date', with: Date.tomorrow.to_s
   click_button 'submit'
 end
 

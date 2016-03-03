@@ -9,5 +9,9 @@ module Repo
       contract.data.save
     end
 
+    def find_contracts_by_wedding_date(date)
+      Entities::Contract.wraps(Contract.where(wedding_date: date))
+    end
+
   end
 end

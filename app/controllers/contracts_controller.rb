@@ -1,4 +1,3 @@
-require_relative '../../app/facades/session_contract'
 
 class ContractsController < ApplicationController
   include ContractRunners
@@ -15,20 +14,8 @@ class ContractsController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
   def search
-    @contracts = SessionContract.find_by_date(params[:contract][:date])
-  end
-
-  def run(klass, *args, &block)
-    klass.new(repo, &block).run(*args)
-  end
-
-  def repo
-    @repo = PhotographerRepository.new
+    @contracts = run(Search, contract_params)
   end
 
   private
