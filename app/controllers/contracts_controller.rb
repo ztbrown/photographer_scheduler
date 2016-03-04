@@ -21,7 +21,7 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params[:photographer_id] ||= current_photographer.id if current_photographer
+    params[:photographer_id] ||= current_user.id if current_user
     params.permit(:rate, :wedding_date, :photographer_id, :customer_id)
   end
 

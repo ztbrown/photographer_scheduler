@@ -14,8 +14,7 @@ Given /^I am not authenticated$/ do
   current_driver = Capybara.current_driver
   begin
     Capybara.current_driver = :rack_test
-    page.driver.submit :delete, "/photographers/sign_out", {}
-    page.driver.submit :delete, "/customers/sign_out", {}
+    page.driver.submit :delete, "/users/sign_out", {}
   ensure
     Capybara.current_driver = current_driver
   end

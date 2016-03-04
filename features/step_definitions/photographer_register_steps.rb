@@ -1,3 +1,3 @@
 When(/^I go to register a new Photographer account$/) do
-  visit '/photographers/sign_up'
+  visit '/users/sign_up/photographer'
 end

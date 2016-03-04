@@ -1,3 +1,3 @@
 When(/^I go to register a new Customer account$/) do
-  visit '/customers/sign_up'
+  visit '/users/sign_up/customer'
 end

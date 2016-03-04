@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :customers
-  devise_for :photographers
+  devise_for :users, :path_names => {:sign_up => "sign_up/:role"}, controllers: {registrations: "registrations"}
 
   root to: 'application#index'
 

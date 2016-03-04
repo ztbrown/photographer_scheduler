@@ -7,9 +7,9 @@ Feature: A Photographer will create a new session
 
     Given I am not authenticated
     When I go to register a new Photographer account
-    And I fill in "photographer[email]" with "zack@gmail.com "
-    And I fill in "photographer[password]" with "12345678"
-    And I fill in "photographer[password_confirmation]" with "12345678"
+    And I fill in "user[email]" with "zack@gmail.com "
+    And I fill in "user[password]" with "12345678"
+    And I fill in "user[password_confirmation]" with "12345678"
     And I press "Sign up"
     When I go to create a new Session
     And I fill in "wedding_date" with "<date>"
